@@ -1,11 +1,11 @@
-import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowDownToLine, ChevronDown, FileText, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
+import { ArrowDownToLine, ChevronDown, FileText, MessageCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import ContactPage from "@/components/ContactPage"
 
 export default function Home() {
   return (
@@ -138,11 +138,11 @@ export default function Home() {
                   </span>
                 </Button>
               </div>
-              {/* <div className="flex items-center gap-4 pt-4">
+              <div className="flex items-center gap-4 pt-4">
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/20"></div>
                 <span className="text-white/50 text-sm">Scroll to explore</span>
                 <ChevronDown className="h-4 w-4 text-white/50 animate-bounce" />
-              </div> */}
+              </div>
             </div>
             <div className="relative w-full md:w-auto">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-400/20 via-navy-800/50 to-navy-900/80 blur-2xl"></div>
@@ -645,153 +645,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-24 bg-green-900/50">
-        <div className="container px-4 mx-auto md:px-6">
-          <div className="flex flex-col items-center justify-center text-center mb-12">
-            <div className="inline-block rounded-lg bg-gold-400/10 px-3 py-1 text-sm text-gold-400 mb-4">Contact</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">Get In Touch</h2>
-            <div className="mt-4 max-w-[700px] text-white/70">
-              Connect with Dr. Raji-Mustapha for speaking engagements, consultations, or collaborations.
-            </div>
-            for speaking engagements, consultations, or collaborations.
-          </div>
-
-          <div className="mx-auto max-w-4xl">
-            <Card className="bg-green-800/90 border-green-700">
-              <CardContent className="p-6 md:p-8">
-                <div className="grid gap-8 md:grid-cols-2">
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-gold-400">Contact Information</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-3">
-                        <Mail className="h-5 w-5 text-gold-400" />
-                        <span className="text-white/80">contact@drraji-mustapha.com</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Phone className="h-5 w-5 text-gold-400" />
-                        <span className="text-white/80">+234 (0) 123 456 7890</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <MapPin className="h-5 w-5 text-gold-400" />
-                        <span className="text-white/80">Abuja, Federal Capital Territory, Nigeria</span>
-                      </div>
-                    </div>
-
-                    <div className="pt-4">
-                      <h4 className="font-medium text-gold-400 mb-2">Connect on Social Media</h4>
-                      <div className="flex gap-4">
-                        <a
-                          href="#"
-                          className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-400/20 transition-colors"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="text-gold-400"
-                          >
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                            <rect width="4" height="12" x="2" y="9" />
-                            <circle cx="4" cy="4" r="2" />
-                          </svg>
-                        </a>
-                       <a
-                          href="#"
-                          className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-400/20 transition-colors group"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="text-gold-400 group-hover:text-gold-300 transition-colors"
-                          >
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                          </svg>
-                        </a>
-                        <a
-                          href="#"
-                          className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-400/20 transition-colors"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="text-gold-400"
-                          >
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-gold-400">Send a Message</h3>
-                    <form className="space-y-4">
-                      <div className="grid gap-4 sm:grid-cols-2">
-                        <div className="space-y-2">
-                          <label htmlFor="name" className="text-sm font-medium text-white/70">
-                            Name
-                          </label>
-                          <Input id="name" placeholder="Your name" className="bg-green-800/90 border-green-700" />
-                        </div>
-                        <div className="space-y-2">
-                          <label htmlFor="email" className="text-sm font-medium text-white/70">
-                            Email
-                          </label>
-                          <Input
-                            id="email"
-                            placeholder="Your email"
-                            type="email"
-                            className="bg-green-800/90 border-green-700"
-                          />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="subject" className="text-sm font-medium text-white/70">
-                          Subject
-                        </label>
-                        <Input id="subject" placeholder="Subject" className="bg-green-800/90 border-green-700" />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="message" className="text-sm font-medium text-white/70">
-                          Message
-                        </label>
-                        <textarea
-                          id="message"
-                          placeholder="Your message"
-                          className="min-h-[120px] w-full rounded-md border bg-green-800/90 border-green-700 p-3 text-white/90 placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2 focus:ring-offset-navy-950"
-                        ></textarea>
-                      </div>
-                      <Button className="w-full bg-gold-500 text-navy-950 hover:bg-gold-400">Send Message</Button>
-                    </form>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <ContactPage/>
 
       {/* Footer */}
       <footer className="py-6 md:py-8 border-t border-green-800/40">
