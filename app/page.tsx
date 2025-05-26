@@ -138,11 +138,11 @@ export default function Home() {
                   </span>
                 </Button>
               </div>
-              <div className="flex items-center gap-4 pt-4">
+              {/* <div className="flex items-center gap-4 pt-4">
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/20"></div>
                 <span className="text-white/50 text-sm">Scroll to explore</span>
                 <ChevronDown className="h-4 w-4 text-white/50 animate-bounce" />
-              </div>
+              </div> */}
             </div>
             <div className="relative w-full md:w-auto">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-400/20 via-navy-800/50 to-navy-900/80 blur-2xl"></div>
