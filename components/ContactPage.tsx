@@ -34,7 +34,7 @@ function ContactPage() {
             `Name: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nHow did you find us?: ${context}\n\nMessage: ${subject}`
         )
 
-        const mailto = `mailto:neca@neca.org.ng?subject=${emailSubject}&body=${body}`;
+        const mailto = `mailto:mustapha@gmail.com?subject=${emailSubject}&body=${body}`;
         if (mailtoRef.current) {
             mailtoRef.current.href = mailto;
             mailtoRef.current.click();
@@ -89,7 +89,7 @@ function ContactPage() {
                                         <h4 className="font-medium text-gold-400 mb-2">Connect on Social Media</h4>
                                         <div className="flex gap-4">
                                             <a
-                                                href="#"
+                                                href="https://www.linkedin.com/in/dr-nasir-olaitan-raji-mustapha-4b3167318/" target='blank'
                                                 className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-400/20 transition-colors"
                                             >
                                                 <svg
