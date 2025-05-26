@@ -9,9 +9,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-green-950 via-green-900 to-green-950 text-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-navy-800/40 backdrop-blur-md bg-navy-950/80">
+      <header className="sticky top-0 z-50 border-b border-green-800/40 backdrop-blur-md bg-green-950/80">
         <div className="container flex items-center justify-between h-16 px-4 mx-auto md:px-6">
           <Link href="/" className="text-xl font-bold tracking-tighter text-gold-400">
             Dr. Raji-Mustapha
@@ -161,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 md:py-24 bg-navy-900/50">
+      <section id="about" className="py-16 md:py-24 bg-green-900/50">
         <div className="container px-4 mx-auto md:px-6">
           <div className="flex flex-col items-center justify-center text-center mb-12">
             <div className="inline-block rounded-lg bg-gold-400/10 px-3 py-1 text-sm text-gold-400 mb-4">About</div>
@@ -172,7 +172,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto max-w-4xl">
-            <Card className="bg-navy-800/50 border-navy-700">
+            <Card className="bg-green-800/90 border-green-700">
               <CardContent className="p-6 md:p-8">
                 <p className="mb-4 leading-relaxed text-white/80">
                   Dr. Nasir Olaitan Raji-Mustapha is the chairman and chief executive officer of Crown Group of
@@ -210,7 +210,7 @@ export default function Home() {
           </div>
           <div className="mx-auto max-w-4xl">
             <div className="grid gap-6">
-              <Card className="bg-navy-800/50 border-navy-700 overflow-hidden">
+              <Card className="bg-green-800/90 border-green-700 overflow-hidden">
                 <CardContent className="p-0">
                   <div className="flex flex-col md:flex-row">
                     <div className="bg-gold-400/10 p-6 md:w-1/3 flex flex-col justify-center items-center text-center">
@@ -229,7 +229,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-navy-800/50 border-navy-700 overflow-hidden">
+              <Card className="bg-green-800/90 border-green-700 overflow-hidden">
                 <CardContent className="p-0">
                   <div className="flex flex-col md:flex-row">
                     <div className="bg-gold-400/10 p-6 md:w-1/3 flex flex-col justify-center items-center text-center">
@@ -248,7 +248,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-navy-800/50 border-navy-700 overflow-hidden">
+              <Card className="bg-green-800/90 border-green-700 overflow-hidden">
                 <CardContent className="p-0">
                   <div className="flex flex-col md:flex-row">
                     <div className="bg-gold-400/10 p-6 md:w-1/3 flex flex-col justify-center items-center text-center">
@@ -267,7 +267,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-navy-800/50 border-navy-700 overflow-hidden">
+              <Card className="bg-green-800/90 border-green-700 overflow-hidden">
                 <CardContent className="p-0">
                   <div className="flex flex-col md:flex-row">
                     <div className="bg-gold-400/10 p-6 md:w-1/3 flex flex-col justify-center items-center text-center">
@@ -290,11 +290,11 @@ export default function Home() {
       </section>
 
       {/* Education & Awards Section */}
-      <section id="education" className="py-16 md:py-24 bg-navy-900/50">
+      <section id="education" className="py-16 md:py-24 bg-green-900/50">
         <div className="container px-4 mx-auto md:px-6">
           <Tabs defaultValue="education" className="mx-auto max-w-4xl">
             <div className="flex flex-col items-center justify-center text-center mb-8">
-              <TabsList className="bg-navy-800/70 border border-navy-700">
+              <TabsList className="bg-green-800/90 border-green-700 border ">
                 <TabsTrigger
                   value="education"
                   className="data-[state=active]:bg-gold-400 data-[state=active]:text-navy-950"
@@ -320,7 +320,7 @@ export default function Home() {
               </div>
 
               <div className="grid gap-6">
-                <Card className="bg-navy-800/50 border-navy-700">
+                <Card className="bg-green-800/90 border-green-700">
                   <CardContent className="p-6 flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4 flex justify-center">
                       <div className="w-16 h-16 rounded-full bg-gold-400/20 flex items-center justify-center">
@@ -352,7 +352,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-navy-800/50 border-navy-700">
+                <Card className="bg-green-800/90 border-green-700">
                   <CardContent className="p-6 flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4 flex justify-center">
                       <div className="w-16 h-16 rounded-full bg-gold-400/20 flex items-center justify-center">
@@ -385,7 +385,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-navy-800/50 border-navy-700">
+                <Card className="bg-green-800/90 border-green-700">
                   <CardContent className="p-6 flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4 flex justify-center">
                       <div className="w-16 h-16 rounded-full bg-gold-400/20 flex items-center justify-center">
@@ -429,7 +429,7 @@ export default function Home() {
               </div>
 
               <div className="grid gap-6">
-                <Card className="bg-navy-800/50 border-navy-700">
+                <Card className="bg-green-800/90 border-green-700">
                   <CardContent className="p-6 flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4 flex justify-center">
                       <div className="w-16 h-16 rounded-full bg-gold-400/20 flex items-center justify-center">
@@ -461,7 +461,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-navy-800/50 border-navy-700">
+                <Card className="bg-green-800/90 border-green-700">
                   <CardContent className="p-6 flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4 flex justify-center">
                       <div className="w-16 h-16 rounded-full bg-gold-400/20 flex items-center justify-center">
@@ -493,7 +493,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-navy-800/50 border-navy-700">
+                <Card className="bg-green-800/90 border-green-700">
                   <CardContent className="p-6 flex flex-col md:flex-row gap-6">
                     <div className="md:w-1/4 flex justify-center">
                       <div className="w-16 h-16 rounded-full bg-gold-400/20 flex items-center justify-center">
@@ -542,7 +542,7 @@ export default function Home() {
           </div>
 
           <div className="mx-auto max-w-4xl">
-            <Card className="bg-navy-800/50 border-navy-700">
+            <Card className="bg-green-800/90 border-green-700">
               <CardContent className="p-6 md:p-8">
                 <div className="grid gap-6">
                   <div className="flex flex-col md:flex-row gap-6 items-start">
@@ -645,7 +645,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-24 bg-navy-900/50">
+      <section id="contact" className="py-16 md:py-24 bg-green-900/50">
         <div className="container px-4 mx-auto md:px-6">
           <div className="flex flex-col items-center justify-center text-center mb-12">
             <div className="inline-block rounded-lg bg-gold-400/10 px-3 py-1 text-sm text-gold-400 mb-4">Contact</div>
@@ -657,7 +657,7 @@ export default function Home() {
           </div>
 
           <div className="mx-auto max-w-4xl">
-            <Card className="bg-navy-800/50 border-navy-700">
+            <Card className="bg-green-800/90 border-green-700">
               <CardContent className="p-6 md:p-8">
                 <div className="grid gap-8 md:grid-cols-2">
                   <div className="space-y-4">
@@ -753,7 +753,7 @@ export default function Home() {
                           <label htmlFor="name" className="text-sm font-medium text-white/70">
                             Name
                           </label>
-                          <Input id="name" placeholder="Your name" className="bg-navy-700/50 border-navy-600" />
+                          <Input id="name" placeholder="Your name" className="bg-green-800/90 border-green-700" />
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="email" className="text-sm font-medium text-white/70">
@@ -763,7 +763,7 @@ export default function Home() {
                             id="email"
                             placeholder="Your email"
                             type="email"
-                            className="bg-navy-700/50 border-navy-600"
+                            className="bg-green-800/90 border-green-700"
                           />
                         </div>
                       </div>
@@ -771,7 +771,7 @@ export default function Home() {
                         <label htmlFor="subject" className="text-sm font-medium text-white/70">
                           Subject
                         </label>
-                        <Input id="subject" placeholder="Subject" className="bg-navy-700/50 border-navy-600" />
+                        <Input id="subject" placeholder="Subject" className="bg-green-800/90 border-green-700" />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="message" className="text-sm font-medium text-white/70">
@@ -780,7 +780,7 @@ export default function Home() {
                         <textarea
                           id="message"
                           placeholder="Your message"
-                          className="min-h-[120px] w-full rounded-md border border-navy-600 bg-navy-700/50 p-3 text-white/90 placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2 focus:ring-offset-navy-950"
+                          className="min-h-[120px] w-full rounded-md border bg-green-800/90 border-green-700 p-3 text-white/90 placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2 focus:ring-offset-navy-950"
                         ></textarea>
                       </div>
                       <Button className="w-full bg-gold-500 text-navy-950 hover:bg-gold-400">Send Message</Button>
@@ -794,7 +794,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-6 md:py-8 border-t border-navy-800/40">
+      <footer className="py-6 md:py-8 border-t border-green-800/40">
         <div className="container px-4 mx-auto md:px-6">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="text-center md:text-left">
