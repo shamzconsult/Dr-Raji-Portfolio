@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowDownToLine, ChevronDown, FileText, MessageCircle } from "lucide-react"
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ContactPage from "@/components/ContactPage"
+import Gallery from "@/components/Gallery"
 
 export default function Home() {
   return (
@@ -39,6 +41,7 @@ export default function Home() {
           <Button
             variant="outline"
             className="hidden md:flex items-center gap-2 border-gold-400/50 text-gold-300 hover:text-gold-100 hover:border-gold-300 bg-transparent hover:bg-transparent px-6 py-3 transition-all duration-300 group relative overflow-hidden"
+            onClick={() => window.open('/CURRICULUM VITAE 2024.pdf', '_blank')}
           >
             {/* Animated border effect */}
             <span className="absolute inset-0 border-2 border-transparent group-hover:border-gold-300/30 rounded-md transition-all duration-500 pointer-events-none"></span>
@@ -120,6 +123,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                   className="border-gold-400/50 text-gold-300 hover:text-gold-300 hover:border-gold-300 bg-transparent hover:bg-transparent px-6 py-3 transition-all duration-300 group relative overflow-hidden"
+                  onClick={() => window.open('/CURRICULUM VITAE 2024.pdf', '_blank')}
                 >
                   {/* Animated border effect */}
                   <span className="absolute inset-0 border-2 border-transparent group-hover:border-white/20 rounded-md transition-all duration-500 pointer-events-none"></span>
@@ -223,6 +227,44 @@ export default function Home() {
                         Leads Crown Group of Companies, a conglomerate comprising Crown Agrovet and Crown Properties and
                         Constructions Limited. Oversees strategic direction, business development, and operational
                         excellence across all business units.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-green-800/90 border-green-700 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="flex flex-col md:flex-row">
+                    <div className="bg-gold-400/10 p-6 md:w-1/3 flex flex-col justify-center items-center text-center">
+                      <h3 className="text-xl font-bold text-gold-400">Oil & Gas Free Zone Authority</h3>
+                      <p className="text-white/70">Special Assistant (Procurement) </p>
+                      <p className="text-sm text-white/50">Present</p>
+                    </div>
+                    <div className="p-6 md:w-2/3">
+                      <p className="text-white/80 leading-relaxed">
+                        Serving as Special Assistant (Procurement) to the Managing Director/Chief Executive Officer of the Oil & Gas Free Zone Authority, 
+                        where responsibilities include overseeing procurement processes, ensuring compliance with public procurement regulations, 
+                        and advising on strategic sourcing initiatives for the organization&apos;s operations within Nigeria&apos;s oil and gas free zones.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+               <Card className="bg-green-800/90 border-green-700 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="flex flex-col md:flex-row">
+                    <div className="bg-gold-400/10 p-6 md:w-1/3 flex flex-col justify-center items-center text-center">
+                      <h3 className="text-xl font-bold text-gold-400">Shamzbridge Consult Limited</h3>
+                      <p className="text-white/70">Chairman, Board of Trustee</p>
+                      <p className="text-sm text-white/50">Present</p>
+                    </div>
+                    <div className="p-6 md:w-2/3">
+                      <p className="text-white/80 leading-relaxed">
+                        As Chairman of the Board of Trustees for Shamzbridge Consult Limited, provides strategic leadership and governance oversight 
+                        for this Abuja-based consulting firm. Responsible for guiding the company&apos;s vision, ensuring compliance with corporate governance 
+                        standards, and advising on high-level business decisions that shape the organization&apos;s future direction and growth.
                       </p>
                     </div>
                   </div>
@@ -342,6 +384,39 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="md:w-3/4">
+                      <h3 className="text-xl font-bold text-gold-400">Doctor of Philosophy (PhD)</h3>
+                      <p className="text-white/70">Management, University of America, Curacao</p>
+                      <p className="text-sm text-gold-300">PhD Graduate, 2022</p>
+                      <p className="mt-2 text-white/80">
+                        Advanced research in management theories and practices, with a focus on strategic leadership, 
+                        organizational behavior, and business administration in global contexts.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-green-800/90 border-green-700">
+                  <CardContent className="p-6 flex flex-col md:flex-row gap-6">
+                    <div className="md:w-1/4 flex justify-center">
+                      <div className="w-16 h-16 rounded-full bg-gold-400/20 flex items-center justify-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-gold-400"
+                        >
+                          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                          <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="md:w-3/4">
                       <h3 className="text-xl font-bold text-gold-400">Doctor of Veterinary Medicine (DVM)</h3>
                       <p className="text-white/70">Ahmadu Bello University</p>
                       <p className="mt-2 text-white/80">
@@ -376,7 +451,7 @@ export default function Home() {
                     <div className="md:w-3/4">
                       <h3 className="text-xl font-bold text-gold-400">Master of Science (M.Sc.)</h3>
                       <p className="text-white/70">Applied Entomology and Parasitology, University of Jos</p>
-                      <p className="text-sm text-gold-300">Best M.Sc. Student, 1995</p>
+                      <p className="text-sm text-gold-300"> M.Sc. Student, 1995</p>
                       <p className="mt-2 text-white/80">
                         Specialized research in entomology and parasitology, focusing on vector-borne diseases and their
                         impact on public health and agriculture.
@@ -409,7 +484,7 @@ export default function Home() {
                     <div className="md:w-3/4">
                       <h3 className="text-xl font-bold text-gold-400">Master of Business Administration (MBA)</h3>
                       <p className="text-white/70">Nasarawa State University</p>
-                      <p className="text-sm text-gold-300">Best MBA Student, 2019</p>
+                      <p className="text-sm text-gold-300"> MBA Student, 2019</p>
                       <p className="mt-2 text-white/80">
                         Advanced studies in business administration, developing expertise in strategic management,
                         organizational leadership, and business development.
@@ -643,6 +718,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <Gallery/>
 
       {/* Contact Section */}
       <ContactPage/>

@@ -34,7 +34,7 @@ function ContactPage() {
             `Name: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nHow did you find us?: ${context}\n\nMessage: ${subject}`
         )
 
-        const mailto = `mailto:mustapha@gmail.com?subject=${emailSubject}&body=${body}`;
+        const mailto = `mailto:nasiraji03@gmail.com?subject=${emailSubject}&body=${body}`;
         if (mailtoRef.current) {
             mailtoRef.current.href = mailto;
             mailtoRef.current.click();
@@ -73,7 +73,7 @@ function ContactPage() {
                                     <div className="space-y-2">
                                         <div className="flex items-center gap-3">
                                             <Mail className="h-5 w-5 text-gold-400" />
-                                            <span className="text-white/80">contact@drraji-mustapha.com</span>
+                                            <span className="text-white/80">nasiraji03@gmail.com</span>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <Phone className="h-5 w-5 text-gold-400" />
@@ -239,43 +239,43 @@ function ContactPage() {
                                 </div>
                             </div>
                              {/* Hidden mailto anchor */}
-            <a ref={mailtoRef} style={{ display: "none" }}>
-              Mail
-            </a>
+                            <a ref={mailtoRef} style={{ display: "none" }}>
+                            Mail
+                            </a>
 
-            {/* Fallback message and Gmail link */}
-            {showFallback && (
-              <div className='mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded text-yellow-900 text-sm'>
-                <p>
-                  <strong>If your email client did not open:</strong>
-                </p>
-                <ul className='list-disc ml-5'>
-                  <li>
-                    You can{" "}
-                    <a
-                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=neca@neca.org.ng&su=Contact%20Request%20from%20Website&body=${encodeURIComponent(
-                        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}\nHow did you find us?: ${formData.context}\n\nPlease provide more context here:`
-                      )}`}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='underline text-blue-700'
-                    >
-                      send us an email via Gmail Webmail
-                    </a>
-                    .
-                  </li>
-                  <li>
-                    Or, email us directly at{" "}
-                    <a
-                      href='mailto:neca@neca.org.ng'
-                      className='underline text-blue-700'
-                    >
-                      neca@neca.org.ng
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            )}
+                            {/* Fallback message and Gmail link */}
+                            {showFallback && (
+                            <div className='mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded text-yellow-900 text-sm'>
+                                <p>
+                                <strong>If your email client did not open:</strong>
+                                </p>
+                                <ul className='list-disc ml-5'>
+                                <li>
+                                    You can{" "}
+                                    <a
+                                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=nasiraji03@gmail.com&su=Contact%20Request%20from%20Website&body=${encodeURIComponent(
+                                        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}\nHow did you find us?: ${formData.context}\n\nPlease provide more context here:`
+                                        )}`}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        className='underline text-blue-700'
+                                    >
+                                        send me an email via Gmail
+                                    </a>
+                                    .
+                                    </li>
+                                <li>
+                                    Or, email us directly at{" "}
+                                    <a
+                                    href='mailto:nasiraji03@gmail.com'
+                                    className='underline text-blue-700'
+                                    >
+                                    nasiraji03@gmail.com
+                                    </a>
+                                </li>
+                                </ul>
+                            </div>
+                            )}
                         </CardContent>
                     </Card>
                 </div>
