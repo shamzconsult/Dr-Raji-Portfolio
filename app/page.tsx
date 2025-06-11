@@ -285,6 +285,53 @@ export default function Home() {
                         led initiatives to enhance productivity across various sectors of the Nigerian economy. Joined
                         the NPC in 1994 as a Senior Productivity Research Officer and rose through the ranks.
                       </p>
+                      
+                      {/* Add this new section for media coverage */}
+                      <div className="mt-4 pt-4 border-t border-green-700">
+                        <h4 className="text-gold-400 font-medium mb-2">Media Coverage of NPC Initiatives:</h4>
+                        <ul className="space-y-2 text-sm text-white/70">
+                          <li>
+                            • <a href="https://nairametrics.com/2024/05/14/fg-develops-new-wage-system-based-on-employee-productivity/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="underline hover:text-gold-400 transition-colors">
+                              FG develops new wage system based on employee productivity (Nairametrics)
+                            </a>
+                          </li>
+                          <li>
+                            • <a href="https://www.premiumtimesng.com/news/top-news/694217-nigerian-govt-considers-introducing-wage-system-for-workers.html" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="underline hover:text-gold-400 transition-colors">
+                              Nigerian govt considers introducing productivity-linked wage system (Premium Times)
+                            </a>
+                          </li>
+                          <li>
+                            • <a href="https://leadership.ng/federal-govt-to-adopt-productivity-link-wage-system/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="underline hover:text-gold-400 transition-colors">
+                              Federal Govt to adopt productivity-linked wage system (Leadership)
+                            </a>
+                          </li>
+                          <li>
+                            • <a href="https://x.com/TheNationNews/status/1790221663432302851" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="underline hover:text-gold-400 transition-colors">
+                              NPC&apos;s productivity wage system announcement (The Nation)
+                            </a>
+                          </li>
+                          {/* <li>
+                            • <a href="https://thenationonlineng.net/fubara-to-raise-probe-panel-on-wikes-govt/" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="underline hover:text-gold-400 transition-colors">
+                              NPC&apos;s productivity wage system announcement (The Nation)
+                            </a>
+                          </li> */}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
