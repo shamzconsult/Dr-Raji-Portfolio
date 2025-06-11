@@ -54,7 +54,7 @@ function ContactPage() {
     };
 
     return (
-        <section id="contact" className="py-16 md:py-24 bg-green-900/50">
+        <section id="contact" className="py-16 md:py-24 ">
             <div className="container px-4 mx-auto md:px-6">
                 <div className="flex flex-col items-center justify-center text-center mb-12">
                     <div className="inline-block rounded-lg bg-gold-400/10 px-3 py-1 text-sm text-gold-400 mb-4">Contact</div>
