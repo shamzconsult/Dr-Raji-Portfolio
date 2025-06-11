@@ -149,8 +149,8 @@ export default function Home() {
               </div>
             </div>
             <div className="relative w-full md:w-auto">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-400/20 via-navy-800/50 to-navy-900/80 blur-2xl"></div>
-              <div className="relative h-[350px] w-[350px] md:h-[450px] md:w-[450px] overflow-hidden rounded-2xl border-2 border-gold-400/30 bg-navy-900/50 p-2 mx-auto">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-950 via-green-900 to-green-950 blur-2xl"></div>
+              <div className="relative h-[350px] w-[350px] md:h-[450px] md:w-[450px] overflow-hidden rounded-2xl border-2 border-gold-400/30 to-green-950 p-2 mx-auto">
                 <Image
                   src="/images/PHOTO-2024-12-12-14-29-49.jpg"
                   alt="Dr. Nasir Olaitan Raji-Mustapha"
