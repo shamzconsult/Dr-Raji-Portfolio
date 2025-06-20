@@ -1,15 +1,17 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowDownToLine, ChevronDown, FileText, MessageCircle } from "lucide-react"
+import { ArrowDownToLine, ChevronDown, FileText, Menu, MessageCircle, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ContactPage from "@/components/ContactPage"
 import Gallery from "@/components/Gallery"
+import { useState } from "react"
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-950 via-green-900 to-green-950 text-white">
       {/* Header */}
@@ -59,26 +61,82 @@ export default function Home() {
             {/* Animated icon */}
             <ArrowDownToLine className="h-4 w-4 group-hover:translate-y-0.5 transition-transform duration-300" />
           </Button>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-            <span className="sr-only">Toggle menu</span>
-          </Button>
+
+          {/* Mobile View Button */}
+           <Button 
+          variant="ghost" 
+          size="icon" 
+          className="md:hidden text-gold-400 hover:bg-gold-400/10"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
+          <span className="sr-only">Toggle menu</span>
+        </Button>
         </div>
+
+          {mobileMenuOpen && (
+        <div className="md:hidden bg-green-950/95 backdrop-blur-lg border-t border-green-800/40">
+          <nav className="flex flex-col items-center py-4 space-y-4 text-sm">
+            <Link 
+              href="#about" 
+              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              href="#experience" 
+              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Experience
+            </Link>
+            <Link 
+              href="#education" 
+              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Education
+            </Link>
+            <Link 
+              href="#awards" 
+              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Awards
+            </Link>
+            <Link 
+              href="#community" 
+              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Community
+            </Link>
+            <Link 
+              href="#contact" 
+              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Button
+              variant="outline"
+              className="flex items-center gap-2 border-gold-400/50 text-gold-300 hover:text-gold-100 hover:border-gold-300 bg-transparent hover:bg-transparent px-6 py-3 transition-all duration-300 group relative overflow-hidden mt-2"
+              onClick={() => {
+                window.open('/CURRICULUM VITAE 2024.pdf', '_blank');
+                setMobileMenuOpen(false);
+              }}
+            >
+              Download CV
+              <ArrowDownToLine className="h-4 w-4 group-hover:translate-y-0.5 transition-transform duration-300" />
+            </Button>
+          </nav>
+        </div>
+      )}
       </header>
 
       {/* Hero Section */}
@@ -99,37 +157,42 @@ export default function Home() {
                   Visionary leader with extensive experience in business, academia, and public service.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                {/* Contact Me Button (Gold Solid) */}
-                <Button 
-                  className="bg-gold-500 text-navy-950 hover:bg-gold-400 px-6 py-3 transition-all duration-300 group relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    <span className="relative overflow-hidden">
-                      <span className="block group-hover:-translate-y-full transition-transform duration-300">
-                        Contact Me
+              <div className="flex flex-col sm:flex-row gap-3 w-full">
+                {/* Contact Me Button (Gold Solid)*/}
+                <Link href="#contact" passHref className="w-full">
+                  <Button
+                    asChild
+                    className="w-full bg-gold-500 text-navy-950 hover:bg-gold-400 px-6 py-3 transition-all duration-300 group relative overflow-hidden"
+                  >
+                    <div className="w-full">
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        <span className="relative overflow-hidden">
+                          <span className="block group-hover:-translate-y-full transition-transform duration-300">
+                            Contact Me
+                          </span>
+                          <span className="absolute inset-0 flex items-center justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            Contact Me
+                          </span>
+                        </span>
+                        <MessageCircle className="h-4 w-4 group-hover:translate-x-0.5 transition-transform duration-300" />
                       </span>
-                      <span className="absolute inset-0 flex items-center justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                        Contact Me
-                      </span>
-                    </span>
-                    <MessageCircle className="h-4 w-4 group-hover:translate-x-0.5 transition-transform duration-300" />
-                  </span>
-                  {/* Gold pulse effect on hover */}
-                  <span className="absolute inset-0 bg-gold-400/30 rounded-md opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 pointer-events-none"></span>
-                </Button>
+                      {/* Gold pulse effect on hover */}
+                      <span className="absolute inset-0 bg-gold-400/30 rounded-md opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 pointer-events-none"></span>
+                    </div>
+                  </Button>
+                </Link>
 
                 {/* View Resume Button */}
                 <Button
                   variant="outline"
-                  className="border-gold-400/50 text-gold-300 hover:text-gold-300 hover:border-gold-300 bg-transparent hover:bg-transparent px-6 py-3 transition-all duration-300 group relative overflow-hidden"
+                  className="w-full border-gold-400/50 text-gold-300 hover:text-gold-300 hover:border-gold-300 bg-transparent hover:bg-transparent px-6 py-3 transition-all duration-300 group relative overflow-hidden"
                   onClick={() => window.open('/CURRICULUM VITAE 2024.pdf', '_blank')}
                 >
                   {/* Animated border effect */}
                   <span className="absolute inset-0 border-2 border-transparent group-hover:border-white/20 rounded-md transition-all duration-500 pointer-events-none"></span>
                   
                   {/* Text with slide effect */}
-                  <span className="relative z-10 flex items-center gap-2">
+                  <span className="relative z-10 flex items-center justify-center gap-2">
                     <span className="relative overflow-hidden">
                       <span className="block group-hover:-translate-y-full transition-transform duration-300">
                         View Resume
