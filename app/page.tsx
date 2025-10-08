@@ -39,6 +39,9 @@ export default function Home() {
             <Link href="#contact" className="text-white/70 hover:text-gold-400 transition-colors">
               Contact
             </Link>
+            <Link href="/projects" className="text-white/70 hover:text-gold-400 transition-colors">
+              Projects
+            </Link>
           </nav>
           <Button
             variant="outline"
