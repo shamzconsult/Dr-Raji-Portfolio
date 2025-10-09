@@ -53,12 +53,7 @@ export default function ProjectsPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-950 via-green-900 to-green-950 text-white">
         <Header />
-        <div className="flex items-center justify-center py-32">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-4 border-gold-400 border-t-transparent mx-auto mb-4"></div>
-            <div className="text-gold-400 text-xl">Loading projects...</div>
-          </div>
-        </div>
+        <ProjectsSkeleton />
       </div>
     );
   }
@@ -109,6 +104,65 @@ function Header() {
         </nav>
       </div>
     </header>
+  );
+}
+
+function ProjectsSkeleton() {
+  return (
+    <section className="py-16 md:py-24">
+      <div className="container px-4 mx-auto md:px-6">
+        <div className="flex flex-col items-center justify-center text-center mb-12">
+          <div className="inline-block rounded-lg bg-gold-400/10 px-3 py-1 mb-4">
+            <div className="h-4 w-20 bg-gold-400/30 rounded animate-pulse"></div>
+          </div>
+          <div className="h-12 w-96 max-w-full bg-gold-400/20 rounded-lg animate-pulse mb-4"></div>
+          <div className="h-6 w-72 max-w-full bg-white/10 rounded animate-pulse mt-4"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {[...Array(6)].map((_, index) => (
+            <div
+              key={index}
+              className="bg-green-800/90 border border-green-700 rounded-2xl overflow-hidden h-full flex flex-col animate-pulse"
+            >
+              <div className="relative h-72 w-full bg-gradient-to-br from-green-700/50 to-green-600/30 flex items-center justify-center">
+                <div className="w-12 h-12 bg-gold-400/20 rounded-full flex items-center justify-center">
+                  <div className="w-6 h-6 bg-gold-400/30 rounded"></div>
+                </div>
+              </div>
+              
+              <div className="p-6 flex-1 flex flex-col space-y-3">
+                <div className="h-6 bg-gold-400/20 rounded w-3/4"></div>
+                
+                <div className="space-y-2">
+                  <div className="h-4 bg-white/10 rounded w-full"></div>
+                  <div className="h-4 bg-white/10 rounded w-5/6"></div>
+                  <div className="h-4 bg-white/10 rounded w-4/6"></div>
+                </div>
+                
+                <div className="h-4 bg-gold-400/20 rounded w-1/2 mt-2"></div>
+                
+                <div className="flex items-center mt-4 space-x-2">
+                  <div className="h-4 bg-gold-400/30 rounded w-20"></div>
+                  <div className="h-4 bg-gold-400/30 rounded w-4"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center gap-2 text-gold-400/70 text-sm">
+            <div className="flex space-x-1">
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+            </div>
+            Loading projects...
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 

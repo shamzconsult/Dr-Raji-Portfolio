@@ -79,7 +79,6 @@ export default function AdminClient() {
       <section className="py-16 md:py-24">
         <div className="container px-4 mx-auto md:px-6 max-w-6xl">
           <div className="flex flex-col items-center text-center mb-12">
-           
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Project Management
             </h2>
@@ -101,12 +100,8 @@ export default function AdminClient() {
             </button>
           </div>
 
-          {/* Projects List */}
           {loading ? (
-            <div className="text-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-4 border-gold-400 border-t-transparent mx-auto mb-4"></div>
-              <div className="text-gold-400 text-xl">Loading projects...</div>
-            </div>
+            <AdminProjectsSkeleton />
           ) : (
             <div className="bg-green-800/90 border border-green-700 rounded-2xl overflow-hidden">
               <div className="p-6">
@@ -204,5 +199,88 @@ export default function AdminClient() {
         </div>
       )}
     </AdminLayout>
+  );
+}
+
+function AdminProjectsSkeleton() {
+  return (
+    <div className="bg-green-800/90 border border-green-700 rounded-2xl overflow-hidden animate-pulse">
+      <div className="p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {[...Array(3)].map((_, index) => (
+            <div key={index} className="bg-green-700/50 rounded-2xl p-6 text-center">
+              <div className="flex items-center justify-center w-12 h-12 bg-gold-400/20 rounded-full mx-auto mb-3">
+                <div className="w-6 h-6 bg-gold-400/30 rounded"></div>
+              </div>
+              <div className="h-8 bg-gold-400/20 rounded w-16 mx-auto mb-2"></div>
+              <div className="h-4 bg-white/10 rounded w-24 mx-auto"></div>
+            </div>
+          ))}
+        </div>
+
+        <div className="space-y-4">
+          {[...Array(5)].map((_, index) => (
+            <div
+              key={index}
+              className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-green-700/50 rounded-lg border border-green-600"
+            >
+              <div className="flex-1 mb-4 sm:mb-0">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-600/50 to-green-500/30 rounded-lg flex-shrink-0 flex items-center justify-center">
+                    <div className="w-6 h-6 bg-gold-400/20 rounded"></div>
+                  </div>
+                  
+                  <div className="flex-1 space-y-3">
+                    <div className="h-6 bg-gold-400/20 rounded w-3/4"></div>
+                    
+                    <div className="space-y-2">
+                      <div className="h-4 bg-white/10 rounded w-full"></div>
+                      <div className="h-4 bg-white/10 rounded w-5/6"></div>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-4 mt-2">
+                      <div className="flex items-center gap-2">
+                        <div className="h-3 w-3 bg-gold-400/20 rounded"></div>
+                        <div className="h-3 bg-white/10 rounded w-16"></div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-3 w-3 bg-gold-400/20 rounded"></div>
+                        <div className="h-3 bg-white/10 rounded w-20"></div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-3 w-3 bg-gold-400/20 rounded"></div>
+                        <div className="h-3 bg-white/10 rounded w-24"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-2 ml-20 sm:ml-4">
+                <div className="flex items-center gap-2 px-4 py-2 border border-gold-400/20 rounded-lg">
+                  <div className="h-4 w-4 bg-gold-400/20 rounded"></div>
+                  <div className="h-4 w-12 bg-gold-400/20 rounded hidden sm:block"></div>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 border border-red-400/20 rounded-lg">
+                  <div className="h-4 w-4 bg-red-400/20 rounded"></div>
+                  <div className="h-4 w-12 bg-red-400/20 rounded hidden sm:block"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-6 pt-6 border-t border-green-700/50">
+          <div className="inline-flex items-center gap-3 text-gold-400/60 text-sm">
+            <div className="flex space-x-1">
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+            </div>
+            Loading projects...
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

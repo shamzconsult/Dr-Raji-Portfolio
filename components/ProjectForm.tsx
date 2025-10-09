@@ -35,9 +35,11 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
       featuredImage: '',
     }
   );
-  const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [uploadProgress, setUploadProgress] = useState<{[key: string]: number}>({});
+  const [uploadingFeaturedImage, setUploadingFeaturedImage] = useState(false);
+  const [uploadingImages, setUploadingImages] = useState(false);
+  const [uploadingVideos, setUploadingVideos] = useState(false);
+  const [, setUploadProgress] = useState<{[key: string]: number}>({});
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -47,7 +49,11 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
   };
 
   const handleMultipleFileUpload = async (files: FileList, type: 'image' | 'video') => {
-    setUploading(true);
+    if (type === 'image') {
+      setUploadingImages(true);
+    } else {
+      setUploadingVideos(true);
+    }
     
     try {
       const uploadPromises = Array.from(files).map(async (file) => {
@@ -87,15 +93,17 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
       console.error('Upload error:', error);
       alert('Some files failed to upload. Please try again.');
     } finally {
-      setUploading(false);
+      if (type === 'image') {
+        setUploadingImages(false);
+      } else {
+        setUploadingVideos(false);
+      }
       setUploadProgress({});
     }
   };
 
-
-
   const handleFeaturedImageUpload = async (file: File) => {
-    setUploading(true);
+    setUploadingFeaturedImage(true);
     try {
       const formData = new FormData();
       formData.append('file', file);
@@ -117,7 +125,7 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
       console.error('Upload error:', error);
       alert('Upload failed');
     } finally {
-      setUploading(false);
+      setUploadingFeaturedImage(false);
     }
   };
 
@@ -184,6 +192,8 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
       videos: [],
     }));
   };
+
+  const isAnyUploading = uploadingFeaturedImage || uploadingImages || uploadingVideos;
 
   return (
     <form onSubmit={handleSubmit} className="p-6">
@@ -315,15 +325,29 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
                   const file = e.target.files?.[0];
                   if (file) handleFeaturedImageUpload(file);
                 }}
+                disabled={uploadingFeaturedImage}
                 className="hidden"
                 id="featured-image"
               />
               <label
                 htmlFor="featured-image"
-                className="cursor-pointer flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
+                className={`cursor-pointer flex flex-col items-center gap-2 transition-colors ${
+                  uploadingFeaturedImage 
+                    ? 'text-white/40 cursor-not-allowed' 
+                    : 'text-white/70 hover:text-white'
+                }`}
               >
-                <ImageIcon className="h-8 w-8" />
-                <span>Upload Featured Image</span>
+                {uploadingFeaturedImage ? (
+                  <div className="flex items-center gap-2">
+                    <div className="animate-spin rounded-full h-6 w-6 border-2 border-gold-400 border-t-transparent"></div>
+                    <span>Uploading Featured Image...</span>
+                  </div>
+                ) : (
+                  <>
+                    <ImageIcon className="h-8 w-8" />
+                    <span>Upload Featured Image</span>
+                  </>
+                )}
               </label>
             </div>
           )}
@@ -356,26 +380,34 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
                   handleMultipleFileUpload(files, 'image');
                 }
               }}
+              disabled={uploadingImages}
               className="hidden"
               id="additional-images"
             />
             <label
               htmlFor="additional-images"
-              className="cursor-pointer flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
+              className={`cursor-pointer flex flex-col items-center gap-2 transition-colors ${
+                uploadingImages 
+                  ? 'text-white/40 cursor-not-allowed' 
+                  : 'text-white/70 hover:text-white'
+              }`}
             >
-              <Upload className="h-6 w-6" />
-              <span>Select Multiple Images</span>
-              <span className="text-white/50 text-xs">
-                Hold Ctrl/Cmd to select multiple files
-              </span>
+              {uploadingImages ? (
+                <div className="flex items-center gap-2">
+                  <div className="animate-spin rounded-full h-6 w-6 border-2 border-gold-400 border-t-transparent"></div>
+                  <span>Uploading Images...</span>
+                </div>
+              ) : (
+                <>
+                  <Upload className="h-6 w-6" />
+                  <span>Select Multiple Images</span>
+                  <span className="text-white/50 text-xs">
+                    Hold Ctrl/Cmd to select multiple files
+                  </span>
+                </>
+              )}
             </label>
           </div>
-
-          {uploading && (
-            <div className="text-center text-gold-400 text-sm mb-4">
-              Uploading {Object.keys(uploadProgress).length} images...
-            </div>
-          )}
 
           {formData.images && formData.images.length > 0 && (
             <div>
@@ -433,18 +465,32 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
                   handleMultipleFileUpload(files, 'video');
                 }
               }}
+              disabled={uploadingVideos}
               className="hidden"
               id="videos"
             />
             <label
               htmlFor="videos"
-              className="cursor-pointer flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
+              className={`cursor-pointer flex flex-col items-center gap-2 transition-colors ${
+                uploadingVideos 
+                  ? 'text-white/40 cursor-not-allowed' 
+                  : 'text-white/70 hover:text-white'
+              }`}
             >
-              <Video className="h-6 w-6" />
-              <span>Select Multiple Videos</span>
-              <span className="text-white/50 text-xs">
-                Hold Ctrl/Cmd to select multiple files
-              </span>
+              {uploadingVideos ? (
+                <div className="flex items-center gap-2">
+                  <div className="animate-spin rounded-full h-6 w-6 border-2 border-gold-400 border-t-transparent"></div>
+                  <span>Uploading Videos...</span>
+                </div>
+              ) : (
+                <>
+                  <Video className="h-6 w-6" />
+                  <span>Select Multiple Videos</span>
+                  <span className="text-white/50 text-xs">
+                    Hold Ctrl/Cmd to select multiple files
+                  </span>
+                </>
+              )}
             </label>
           </div>
 
@@ -488,10 +534,10 @@ export default function ProjectForm({ project, onClose, onSave }: ProjectFormPro
           </button>
           <button
             type="submit"
-            disabled={saving || uploading}
+            disabled={saving || isAnyUploading}
             className="flex-1 bg-gold-500 hover:bg-gold-400 text-navy-950 py-3 rounded-lg transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {saving ? 'Saving...' : uploading ? 'Uploading...' : project ? 'Update Project' : 'Create Project'}
+            {saving ? 'Saving...' : isAnyUploading ? 'Uploading...' : project ? 'Update Project' : 'Create Project'}
           </button>
         </div>
       </div>

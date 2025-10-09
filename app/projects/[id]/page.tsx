@@ -42,8 +42,9 @@ export default function ProjectDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-950 via-green-900 to-green-950 text-white flex items-center justify-center">
-        <div className="text-gold-400 text-xl">Loading project...</div>
+      <div className="min-h-screen bg-gradient-to-br from-green-950 via-green-900 to-green-950 text-white">
+        <Header />
+        <ProjectDetailSkeleton />
       </div>
     );
   }
@@ -63,24 +64,7 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-950 via-green-900 to-green-950 text-white">
-      <header className="sticky top-0 z-50 border-b border-green-800/40 backdrop-blur-md bg-green-950/80">
-        <div className="container flex items-center justify-between h-16 px-4 mx-auto md:px-6">
-          <Link href="/" className="text-xl font-bold tracking-tighter text-gold-400">
-            Dr. Raji-Mustapha
-          </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="/" className="text-white/70 hover:text-gold-400 transition-colors">
-              Home
-            </Link>
-            <Link href="/projects" className="text-white/70 hover:text-gold-400 transition-colors">
-              Projects
-            </Link>
-            <Link href="/admin" className="text-white/70 hover:text-gold-400 transition-colors">
-              Admin
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <section className="py-16 md:py-24">
         <div className="container px-4 mx-auto md:px-6 max-w-4xl">
@@ -141,11 +125,11 @@ export default function ProjectDetailPage() {
                   </div>
                 )}
 
-                {/* Additional Images */}
+                {/* Extra Images part */}
                 {project.images && project.images.length > 0 && (
                   <div className="mt-8">
                     <h3 className="text-gold-400 font-semibold mb-4">Gallery</h3>
-                    <div className="grid grid-cols-2  gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                       {project.images.map((image, index) => (
                         <div key={index} className="relative h-64 md:h-96 rounded-lg overflow-hidden">
                           <Image
@@ -160,7 +144,7 @@ export default function ProjectDetailPage() {
                   </div>
                 )}
 
-                {/* Videos */}
+                {/* Videoss */}
                 {project.videos && project.videos.length > 0 && (
                   <div className="mt-8">
                     <h3 className="text-gold-400 font-semibold mb-4">Videos</h3>
@@ -183,5 +167,140 @@ export default function ProjectDetailPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+function Header() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-green-800/40 backdrop-blur-md bg-green-950/80">
+      <div className="container flex items-center justify-between h-16 px-4 mx-auto md:px-6">
+        <Link href="/" className="text-xl font-bold tracking-tighter text-gold-400">
+          Dr. Raji-Mustapha
+        </Link>
+        <nav className="hidden md:flex items-center gap-6 text-sm">
+          <Link href="/" className="text-white/70 hover:text-gold-400 transition-colors">
+            Home
+          </Link>
+          <Link href="/projects" className="text-white/70 hover:text-gold-400 transition-colors">
+            Projects
+          </Link>
+          
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+function ProjectDetailSkeleton() {
+  return (
+    <section className="py-16 md:py-24">
+      <div className="container px-4 mx-auto md:px-6 max-w-4xl">
+        <div className="mb-8">
+          <div className="inline-flex items-center text-gold-400/50 animate-pulse">
+            <div className="w-4 h-4 bg-gold-400/30 rounded mr-2"></div>
+            <div className="h-4 w-32 bg-gold-400/20 rounded"></div>
+          </div>
+        </div>
+
+        <div className="bg-green-800/90 border border-green-700 rounded-2xl overflow-hidden animate-pulse">
+          <div className="relative h-72 md:h-[500px] w-full bg-gradient-to-br from-green-700/50 to-green-600/30 flex items-center justify-center">
+            <div className="w-16 h-16 bg-gold-400/20 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-gold-400/30 rounded"></div>
+            </div>
+          </div>
+
+
+          <div className="p-6 md:p-8">
+
+            <div className="mb-6">
+              <div className="h-8 bg-gold-400/20 rounded w-3/4 mb-2"></div>
+              <div className="h-8 bg-gold-400/20 rounded w-1/2"></div>
+            </div>
+
+
+            <div className="space-y-3 mb-8">
+              <div className="h-4 bg-white/10 rounded w-full"></div>
+              <div className="h-4 bg-white/10 rounded w-full"></div>
+              <div className="h-4 bg-white/10 rounded w-5/6"></div>
+              <div className="h-4 bg-white/10 rounded w-4/6"></div>
+              <div className="h-4 bg-white/10 rounded w-3/4"></div>
+            </div>
+
+
+            <div className="space-y-6">
+
+              <div>
+                <div className="h-5 bg-gold-400/20 rounded w-24 mb-2"></div>
+                <div className="h-4 bg-white/10 rounded w-32"></div>
+              </div>
+
+              <div>
+                <div className="h-5 bg-gold-400/20 rounded w-36 mb-2"></div>
+                <div className="h-4 bg-white/10 rounded w-48"></div>
+              </div>
+
+              <div>
+                <div className="h-5 bg-gold-400/20 rounded w-20 mb-2"></div>
+                <div className="space-y-2">
+                  <div className="h-4 bg-white/10 rounded w-full"></div>
+                  <div className="h-4 bg-white/10 rounded w-5/6"></div>
+                </div>
+              </div>
+
+              <div>
+                <div className="h-5 bg-gold-400/20 rounded w-24 mb-2"></div>
+                <div className="space-y-2">
+                  <div className="h-4 bg-white/10 rounded w-full"></div>
+                  <div className="h-4 bg-white/10 rounded w-4/6"></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <div className="h-6 bg-gold-400/20 rounded w-20 mb-4"></div>
+              <div className="grid grid-cols-2 gap-4">
+                {[...Array(4)].map((_, index) => (
+                  <div
+                    key={index}
+                    className="relative h-64 md:h-96 rounded-lg overflow-hidden bg-gradient-to-br from-green-700/40 to-green-600/20 flex items-center justify-center"
+                  >
+                    <div className="w-8 h-8 bg-gold-400/20 rounded-full flex items-center justify-center">
+                      <div className="w-4 h-4 bg-gold-400/30 rounded"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <div className="h-6 bg-gold-400/20 rounded w-16 mb-4"></div>
+              <div className="grid grid-cols-1 gap-4">
+                {[...Array(2)].map((_, index) => (
+                  <div
+                    key={index}
+                    className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-green-700/40 to-green-600/20 flex items-center justify-center"
+                  >
+                    <div className="w-12 h-12 bg-gold-400/20 rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-gold-400/30 rounded"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center mt-8">
+          <div className="inline-flex items-center gap-3 text-gold-400/60 text-sm">
+            <div className="flex space-x-1">
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+              <div className="w-2 h-2 bg-gold-400/50 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+            </div>
+            Loading project details...
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
