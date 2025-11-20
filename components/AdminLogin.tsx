@@ -28,7 +28,7 @@ export default function AdminLogin() {
       const data = await response.json();
 
       if (response.ok) {
-        window.location.href = '/admin';
+        window.location.href = '/super-admin/admin';
       } else {
         setError(data.error || 'Login failed');
       }
