@@ -24,20 +24,23 @@ export default function Home() {
             <Link href="#about" className="text-white/70 hover:text-gold-400 transition-colors">
               About
             </Link>
-            <Link href="#experience" className="text-white/70 hover:text-gold-400 transition-colors">
+            {/* <Link href="#experience" className="text-white/70 hover:text-gold-400 transition-colors">
               Experience
-            </Link>
+            </Link> */}
             <Link href="#education" className="text-white/70 hover:text-gold-400 transition-colors">
               Education
             </Link>
             <Link href="#awards" className="text-white/70 hover:text-gold-400 transition-colors">
               Awards
             </Link>
-            <Link href="#community" className="text-white/70 hover:text-gold-400 transition-colors">
+            {/* <Link href="#community" className="text-white/70 hover:text-gold-400 transition-colors">
               Community
-            </Link>
+            </Link> */}
             <Link href="#contact" className="text-white/70 hover:text-gold-400 transition-colors">
               Contact
+            </Link>
+            <Link href="/projects" className="text-white/70 hover:text-gold-400 transition-colors">
+              Projects
             </Link>
           </nav>
           <Button
@@ -385,14 +388,14 @@ export default function Home() {
                               NPC&apos;s productivity wage system announcement (The Nation)
                             </a>
                           </li>
-                          {/* <li>
-                            • <a href="https://thenationonlineng.net/fubara-to-raise-probe-panel-on-wikes-govt/" 
+                          <li>
+                            • <a href="https://emporiumreporters.com.ng/npc-honours-immediate-past-dg-dr-nasir-raji-mustapha-with-sendforth-ceremony/" 
                               target="_blank" 
                               rel="noopener noreferrer"
                               className="underline hover:text-gold-400 transition-colors">
-                              NPC&apos;s productivity wage system announcement (The Nation)
+                              Dr. Nasir Raji-Mustapha&apos;s send forth ceremony at NPC
                             </a>
-                          </li> */}
+                          </li>
                         </ul>
                       </div>
                     </div>
