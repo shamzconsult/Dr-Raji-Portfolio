@@ -24,18 +24,12 @@ export default function Home() {
             <Link href="#about" className="text-white/70 hover:text-gold-400 transition-colors">
               About
             </Link>
-            {/* <Link href="#experience" className="text-white/70 hover:text-gold-400 transition-colors">
-              Experience
-            </Link> */}
             <Link href="#education" className="text-white/70 hover:text-gold-400 transition-colors">
               Education
             </Link>
             <Link href="#awards" className="text-white/70 hover:text-gold-400 transition-colors">
               Awards
             </Link>
-            {/* <Link href="#community" className="text-white/70 hover:text-gold-400 transition-colors">
-              Community
-            </Link> */}
             <Link href="#contact" className="text-white/70 hover:text-gold-400 transition-colors">
               Contact
             </Link>
@@ -91,13 +85,7 @@ export default function Home() {
             >
               About
             </Link>
-            <Link 
-              href="#experience" 
-              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Experience
-            </Link>
+            
             <Link 
               href="#education" 
               className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
@@ -113,18 +101,18 @@ export default function Home() {
               Awards
             </Link>
             <Link 
-              href="#community" 
-              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Community
-            </Link>
-            <Link 
               href="#contact" 
               className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
+            </Link>
+            <Link 
+              href="/projects" 
+              className="text-white/70 hover:text-gold-400 transition-colors px-4 py-2 w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+             Projects
             </Link>
             <Button
               variant="outline"
