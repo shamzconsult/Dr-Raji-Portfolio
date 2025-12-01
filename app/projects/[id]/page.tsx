@@ -88,12 +88,12 @@ export default function ProjectDetailPage() {
             )}
 
             <div className="p-6 md:p-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-gold-400 mb-4">
+              <h1 className="text-2xl md:text-4xl font-bold text-gold-400 mb-4">
                 {project.title}
               </h1>
               
               <div className="prose prose-invert max-w-none">
-                <p className="text-white/80 text-lg leading-relaxed mb-6">
+                <p className="text-white/80 md:text-lg leading-relaxed mb-6">
                   {project.description}
                 </p>
 
